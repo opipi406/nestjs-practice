@@ -1,4 +1,5 @@
-import { Injectable, Query } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
+import { HeavyResponseDTO } from 'dto/heavy';
 
 @Injectable()
 export class AppService {
@@ -12,6 +13,7 @@ export class AppService {
 
   async getHeavyResource(time: number) {
     await this.sleep(time * 1000);
-    return `Too heavy API (${time}sec)`;
+
+    return new HeavyResponseDTO(`Too heavy API (${time}sec)`, time);
   }
 }

@@ -1,6 +1,7 @@
 import { Controller, Get, Query } from '@nestjs/common';
+import { HeavyQueryDTO, HeavyResponseDTO } from 'dto/heavy';
+
 import { AppService } from './app.service';
-import { HeavyQueryDTO } from 'dto/heavy';
 
 @Controller()
 export class AppController {
@@ -12,7 +13,7 @@ export class AppController {
   }
 
   @Get('heavy')
-  getHeavyResource(@Query() query: HeavyQueryDTO): Promise<string> {
+  getHeavyResource(@Query() query: HeavyQueryDTO): Promise<HeavyResponseDTO> {
     return this.appService.getHeavyResource(query.time);
   }
 }
