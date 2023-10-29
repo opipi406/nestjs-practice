@@ -1,5 +1,5 @@
 import { Controller, Get, Query } from '@nestjs/common';
-import { HeavyQueryDTO, HeavyResponseDTO } from 'dto/heavy';
+import { HeavyQueryDTO, HeavyResponseDTO } from 'src/dto/heavy';
 
 import { AppService } from './app.service';
 

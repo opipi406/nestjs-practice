@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { HeavyResponseDTO } from 'dto/heavy';
+import { HeavyResponseDTO } from 'src/dto/heavy';
 
 @Injectable()
 export class AppService {
