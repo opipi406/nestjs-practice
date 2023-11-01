@@ -1,10 +1,12 @@
-import { Module, MiddlewareConsumer, NestModule } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { CorsMiddleware } from 'src/middleware/cors.middleware';
 
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { MapModule } from './map/map.module';
+
 @Module({
-  imports: [],
+  imports: [MapModule],
   controllers: [AppController],
   providers: [AppService],
 })
